@@ -117,6 +117,27 @@ EOF
 
 Look in the `config` table and change the configuration as necessary. See the [nodejs-pool README](README.md) for more details.
 
+You must set the following variables in the `config` table (example defaults are included):
+```
+daemon.address = 127.0.0.1
+daemon.port = 7878
+daemon.enableAlgoSwitching = false
+wallet.address = 127.0.0.1
+wallet.port = 38081
+pool.address = TARI_ADDRESS:MONERO_ADDRESS
+payout.feeAddress = TARI_ADDRESS:MONERO_ADDRESS
+general.shareHost = http://127.0.0.1/leafApi
+wallet.grpcAddress = 127.0.0.1
+wallet.grpcPort = 18143
+general.network = stagenet
+```
+
+The following must be set in the `config` table if not using the deploy script (see [start.bash](https://github.com/tari-project/nodejs-pool/blob/c25468e125a49a149a5b32a73acac387485810ee/deployment/docker/backend/start.bash#L45))
+```
+api.authKey
+api.secKey
+```
+
 **Running the pool**
 
 ```shell
